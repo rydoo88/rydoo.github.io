@@ -1,0 +1,17 @@
+h1 {
+    color: blue;
+    background-color: yellow;
+    border: 1px solid black;
+  }
+  
+  p {
+    color: white;
+    font-size: em;
+  }
+  body{
+    background-color: gray;
+    font-size: 130%;
+    font-family: Arial, Helvetica, sans-serif Verdana, Geneva, Tahoma, sans-serif;
+   
+  }
+ 

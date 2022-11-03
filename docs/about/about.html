@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../css/styleme.css" rel="Stylesheet">
+    <link href="../css/styleme.css" rel="Stylesheet" type="text/css"/>
 </head>
 <body>
     <Header>
@@ -20,7 +20,7 @@
     <main>
 <section>
     <h2> About Jean-Roody Louis</h2>
-    <p> Jean-Roody Louis is an Engineer in Computer Sciences actually attending a Master Program in Computer Sciences since August 2022</p>
+    <p class="backwards"> Jean-Roody Louis is an <span id="yellow">Engineer </span>in Computer Sciences actually attending a <span id="yellow">Master Program </span>in Computer Sciences since<span id="yellow"> August 2022</span></p>
     <hr>
     <h3> My courses at MIU</h3>
     <ul> 
@@ -33,11 +33,21 @@
 </section>
 <section>
     <h2> My Favorite Movies</h2>
-    <ol>
-        <li> Independance Day (IMOB)</li>
-        <li> Training Day (IMOB)</li>
-        <li>Forest Gump(IMOB)</li>
-        <li> Home Alone 2 (IMOB)</li>
+    <ol reversed>
+        <li> Home Alone 2<a href="https://imdb.com" target="_blank">(IMDB)</a>
+           <ul><li class="yellow"> Director</li>
+                <ul><li id="white"> Robert Atlas</li></ul>
+                <li class="yellow"> Genre</li>
+                <ul><li id="white"> Comedy /Drama/Romance</li></ul>
+                <li class="yellow"> Tagline</li>
+                <ul><li id="white"> The world will never be the same once you have seen it </li></ul>
+                <li class="yellow"> Plot Ouline</li>
+                <ul><li id="white"> Will Smith , the Hero of the Independance </li></ul>
+                </ul>
+        </li>
+        <li> Forest gump<a href="#">(IMDB)</a></li>
+        <li>Training Day<a href="#">(IMDB)</a></li>
+        <li> Independance Day <a href="#">(IMDB)</a></li>
     </ol>
     
 </section>
@@ -54,12 +64,12 @@
    <div> Emmanuel Biffomo loves Meditation</div>
 
    <h3> HTML5 Validator W3c and CSS validator</h3>
-   <a href="https://validator.w3.org/check?url=https://rydoo88.github.io/docs/about/about.html"> 
+   <a href="https://validator.w3.org/check?url=https://rydoo88.github.io//docs/about/about.html"> 
        <img src="../images/w3c-html5-logo.png" alt =" Html Logo"> 
    </a>
 
    <a href = "https://jigsaw.w3.org/css-validator://rydoo88.github.io/docs/about/about.html">
-    <img src="../images/w3c-css.png" alt ="css validator">  
+    <img src="../images/w3c-css.png">  
 </a>
          
     </footer>

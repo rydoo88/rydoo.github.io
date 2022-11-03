@@ -14,4 +14,56 @@ h1 {
     font-family: Arial, Helvetica, sans-serif Verdana, Geneva, Tahoma, sans-serif;
    
   }
- 
+ a:link{color: red;
+  text-decoration-line:none;
+  
+}
+ a:visited{color:yellowgreen;}
+ a:hover{color: blue;
+        text-decoration-line: underline; 
+}
+
+ p::first-letter{
+  float: left;
+   color: blue; 
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  padding-bottom: 5px;
+  margin-right: 5px;
+  margin-bottom: -5px;
+ }
+
+ ul{
+  list-style: none;
+  
+  
+ }
+ li.yellow{
+  color: yellow;
+  font-size: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 10%;
+  
+ }
+
+ #white{
+  color: white;
+  font-size: 80;
+ }
+
+ #yellow{
+  color : yellow
+ }
+ p.backwards{
+  -webkit-transform:rotate(180deg);text-align:left;
+  -webkit-transform:scale(1,-1);
+-moz-transform:scale(1,-1);
+-ms-transform:scale(1,-1);
+-o-transform:scale(1,-1);
+transform:scale(1,-1);
+
+ }

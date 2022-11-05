@@ -1,0 +1,62 @@
+body{
+    background-color:blue;
+}
+
+header {
+    background-color:rgb(221, 215, 215);
+    border-radius: 0;
+    border:0;
+    font-size: 12px;
+
+}
+#image{
+    width: 25x;
+    height: 25px;
+    
+}
+main h3{
+    font-size: 50px;
+    color: white;
+    font-family: 'Open Sans','sans-serif';
+   
+}
+#big{
+    width: 100%;
+    height: auto;
+    padding: 80px;
+    background-color: rgb(40, 40, 156);
+}
+#big1{
+    background-color:rgb(221, 215, 215); 
+ 
+}
+ #big2{
+    background-color:rgba(233, 227, 227, 0.959); 
+    padding: 15px;
+}
+.style{
+    font-size: 20px;
+    padding :80px;
+
+}
+
+    #border{
+        border: 100px;
+    }
+    #big3{
+        background-color:rgb(221, 215, 215); 
+        padding: 50px;
+    }
+    #bolder{
+        font:bold;
+    }
+    
+    
+
+      #paddingfoto{
+        padding :80px;
+        
+      }
+     #layoutBorder {
+    padding-right:20px; border-right: 1px solid #ccc;
+      }

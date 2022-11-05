@@ -58,5 +58,5 @@ main h3{
         
       }
      #layoutBorder {
-    padding-right:20px; border-right: 1px solid #ccc;
+        border-right: 1px dashed #333;
       }

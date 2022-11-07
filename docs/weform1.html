@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/webform1.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Page </h1>
+    <section class="upperWrapper">
+
+    
+
+     <div class="leftBottomChildBottom">
+        <form action="/action_page.php">
+
+            <label for="url"> Enter URL address of site here:</label><br>
+          <input
+            class="inputForm"
+            type="url"
+            id="url"
+            placeholder="https://example.com"
+            name="url"
+            value=""
+            pattern="^(http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+            required
+            title="Please enter as the format required http(s)://example.com"
+          ><br>
+          <label for="UsernameOrEmail"> Email address:</label><br>
+          <input
+            class="inputForm"
+            type="text"
+            id="UsernameOrEmail"
+            placeholder="Enter email"
+            name="UsernameOrEmail"
+            value=""
+          ><br>
+          <span class="spanclass"> We will never share your email with Anyone else</span><br>
+          <label for="Password">Password:</label><br>
+          <input
+            class="inputForm"
+            type="password"
+            id="Password"
+            name="Password"
+            placeholder="Enter password"
+            value=""
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters"
+            required
+          >
+          <br>
+          <input
+            type="checkbox"
+            id="rememberme"
+            name="rememberme"
+            value="Boat"
+          >
+          <label for="rememberme"> Check me out</label><br>
+
+          
+      
+          <button class="loginBtn" type="submit">Submit</button>
+        </form>
+      </div>
+
+    </section>
+    <footer>
+        <section class="footerWrapper">
+            <h5>HTML5 Validator W3C and CSS validator</h5>
+         
+            <a target="_blank" href="https://validator.w3.org/nu/?doc=https://rydoo88.github.io/webform1.html"> 
+                <img src="../docs/images/w3c-html5-logo.png"
+                alt="html validator">
+            </a>
+            <a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https://rydoo88.github.io/webform1.html"> 
+                <img src="../docs/images/w3c-css.png"
+                alt="css validator">
+            </a>
+       
+        </section>
+    </footer>
+    
+</body>
+</html>

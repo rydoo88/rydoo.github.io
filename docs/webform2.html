@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/weform2.css">
+    <title>Document</title>
+</head>
+<body>
+   <header>
+    <nav class="leftitems">
+     <div class="golden">
+        <a href="#"><h6> MUM Golden Dome ::: SRM System</h6></a>
+     </div>
+     <div class="products">
+       <a href="#" ><h6> Products</h6></a>
+     </div>
+     <div class="suppliers">
+        <a href="#"><h6> Suppliers</h6></a>
+     </div>
+     <div class = "rightitems">
+        <span> Hello ! </span>
+        <button class="loginBtn" type="submit">Sign Out</button>
+        </div>
+
+    </nav>
+
+    
+   </header> 
+
+   <main>
+    <div class="textform" >
+        <p> New Product Form</p>
+    </div>
+
+    
+    <form action="/action_page.php">
+
+        <div class="form-row">
+            <div class="form-group">
+              <label for="productnumber">Product Number</label>
+              <input id="product_number" type="text"  placeholder="Enter product number" name="product_number" value="">
+            </div>
+            <div class="form-group">
+              <label for="quantityinstock">Quantity In Stock</label>
+              <input id="quantity_instock" type="number" placeholder= "Enter product number" name ="quantity_instock" value="0" >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="names" type="text" placeholder="name" name="names" value="">
+            </div>
+            <div class="form-group">
+              <label for="supplier">Supplier</label>
+              <input id="suppliers" type="text" placeholder="suppliers" value="">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="unitprice">Unit Price</label>
+              <input id="unit_price" type="number" placeholder="unit_price" name="unit_price" value="0.0" pattern="^\d*(\.\d{0,2})?$">
+            </div>
+            <div class="form-group">
+              <label for="datesupp">Date Supplied</label>
+              <input id="date_sup" type="date" placeholder="date_sup" value="" name="date_sup" pattern="\d{4}-\d{2}-\d{2}">
+            </div>
+          </div>        
+
+    </form>
+
+   <footer >
+    <div class="form-row">
+    <div class="form-group">
+      <button id="reset" type="reset" > Reset</button>
+      <button id="cancel" type="button"  >Cancel</button>
+      <button id="submit" type="submit" > Submit</button> 
+    </div>
+   </div>
+
+
+   <section>
+    <h6>HTML5 Validator W3C and CSS validator</h6>
+    <a target="_blank" href="https://validator.w3.org/nu/?doc=https://rydoo88.github.io/weform2.html"> 
+        <img src="./images/w3c-html5-logo.png"
+        alt="html validator">
+    </a>
+    <a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https://rydoo88.github.io/webform2.html"> 
+        <img src="./images/w3c-css.png"
+        alt="css validator">
+    </a>
+</section>
+   </footer>
+
+
+
+   </main>
+</body>
+</html>

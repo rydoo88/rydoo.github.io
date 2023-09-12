@@ -1,0 +1,400 @@
+
+
+
+header {
+    background-color:gray; /* Red color */
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Set the header to be fixed */
+    top: 0; /* Position at the top of the viewport */
+    width: 100%; /* Take up the full width of the viewport */
+    z-index: 1000; /* Ensure the header appears above other content */
+    transition: all 0.3s ease; /* Add smooth transition effect */
+}
+
+
+
+
+/* Styles for the header when scrolled */
+header.scrolled {
+    background-color:white;
+    padding: 5px; /* Adjust padding when scrolling */
+   color:#333333;
+    
+}
+
+/* Add a new class for the scrolled navigation items */
+nav ul li  a.scrolled {
+    color: #333333; /* Change to the desired color */
+    /* Add any other styles you want for the scrolled items */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+     font-weight: bold;
+}
+
+/* Change the color of the navigation links to white */
+nav ul li a {
+    color: white;
+}
+
+/* Style for the logo */
+.logo {
+    margin-left: 20px;
+ display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+ margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    
+}
+
+/* Keyframes for blinking animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Styles for the blinking paragraph */
+.blink {
+    animation: blink 5s infinite;
+}
+
+
+.dropdown {
+    position: relative;
+height: 50px; /* Adjust the height as needed */
+
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: gray;
+    padding: 10px;
+    list-style: none;
+   max-width: 200px; /* Limit the width of the dropdown menu */
+}
+
+/* Add margin between dropdown items */
+.dropdown-menu li {
+    margin-bottom: 8px;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure text fits the line */
+.dropdown-menu a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px; /* Adjust as needed */
+    background-color: gray;
+    padding: 10px;
+}
+
+
+
+
+
+/* Style for the donate button */
+.donate-button a {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: gray; /* Red color */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button color on hover */
+.donate-button a:hover {
+    background-color: black /* Darker red color */
+}
+
+/* Toggle menu styles */
+.toggle-menu {
+    display: none; /* Initially hide the toggle menu */
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+/* Show the toggle menu and hide the regular menu at smaller screen sizes */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+   .toggle-menu {
+        display: block;
+    }
+  
+
+    /* Show the regular menu and hide the toggle menu when expanded */
+    nav ul.show {
+        display: block;
+       background-color: gray; /* Set background color for the toggle menu */
+      padding: 10px; /* Add space around the navigation items */
+      position: relative;
+      top: 60px; /* Adjust based on your header's height */
+      right: 0;
+     width: 150%;
+    z-index: 999; /* Ensure the menu appears above other content */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+
+
+    .toggle-menu.show .bar {
+        background-color: white; /* Change bar color when toggle menu is expanded */
+    }
+}
+
+/* Adjust the styles for the navigation links in the toggle menu */
+nav ul.show li {
+    margin-bottom: 15px; /* Add space between navigation items */
+}
+
+
+/* Style the sections */
+section {
+    padding-top: 50px;
+    text-align: center;
+    margin-bottom: 1px;
+   color:white;
+ font-size: 20px;
+    line-height: 1.5;
+}
+
+.image-container {
+    display: flex; /* Use flexbox to arrange images horizontally */
+    justify-content: space-between; /* Space images evenly */
+    align-items: center; /* Center-align images vertically */
+}
+
+.image-container img {
+    max-width: 30%; /* Adjust the width of individual images */
+    height: auto;
+}
+
+/* Style images */
+img {
+    
+    display: block; /* Remove extra spacing below images */
+    margin: 0 auto; /* Center-align images */
+}
+
+/* Style text content */
+.text-content {
+    background-color: gray; /* Set a background color for the text section */
+    padding: 10px;
+    border: 1px solid #ddd; /* Add a border around the text section */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  
+}
+
+/* Style headings */
+.text-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+   color: white;
+}
+
+
+
+/* Customize styles for specific sections if needed */
+#section1 {
+    background-color: #f7f7f7; /* Customize the background color for Section 1 */
+}
+
+#section2 {
+    background-color: #f7f7f7; /* Customize the background color for Section 1 */
+   z-index:-1;
+}
+.slide-left {
+    animation: slideFromLeft 0.5s ease-in-out;
+    animation-delay: 0.5s; /* Delay the animation for 0.5 seconds after page load */
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start the animation from the left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* End the animation at its original position */
+        opacity: 1;
+    }
+}
+
+#section3 {
+    background-color: #e8e8e8; /* Customize the background color for Section 3 */
+  z-index:1;
+}
+
+.footer {
+    background: linear-gradient(to bottom, #000000, #FFFFFF);
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+  }
+  .footer .church-name {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+ .footer .church-logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+    color: #333;
+}
+
+.contact-form {
+    flex: 1;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-submit {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info, .contact-form, .social-media {
+        flex: 1;
+        width: 100%;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+    .social-media {
+        margin-top: 20px;
+    }
+}
+  .copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+  }
+

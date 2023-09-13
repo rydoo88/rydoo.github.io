@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styleStory1.css">
+    <title>My Church</title>
+</head>
+<body>
+    <header >
+        <div class="logo">
+           <a href="../html/main.html"><img src="../images/umclogo.gif" alt="Church Logo"></a> 
+            <div class="logo-text">
+                <h1>FUMCVC</h1>
+                <p class="blink">Knowing God + Growing in Grace + Going in Love</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+
+                
+                <li class="dropdown"><a href="history.html">HISTORY</a></li>
+                    
+                    <li><a href="history2.html">BELEIF</a></li>
+                    <li><a href="beleif.html">CHILDREN</a></li>
+                    <li><a href="#">YOUTH</a></li>
+                    <li><a href="#">VALLEY CENTER PRESCHOOL</a></li>
+                   
+                
+                <li class="dropdown">
+                    <a href="#">ABOUT US</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Service Times</a></li>
+                        <li><a href="#">What We Beleive</a></li>
+                        <li><a href="#">Become A Member</a></li>
+                        <li><a href="#">Church History</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">FUMCVC Email Group</a></li>
+                        <li><a href="#">FUMCVC NewsLetter The Broadcaster</a></li>
+                        <li><a href="#">Ways To Give</a></li>
+                        <li><a href="#">United Women In Faith</a></li>
+                        <li><a href="#">Employment</a></li>
+
+                    </ul>
+                </li>
+                
+                <li class=donate-button><a href="https://gp.vancopayments.com/gpo/#/donateNow/833c8e94-3641-4a3e-b005-ebb8e1d">GIVE</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <section id="belief">
+        <div class="belief-content">
+            <div class="belief-text">
+                <h2>Church History</h2>
+                <p>The First United Methodist Church of Valley Center was officially organized in 1879,
+                     and the first church building stood at the corner of Main and Meridian, on the current
+                      site of Emprise Bank.  In 1913, work was begun on a new building at 229 Ash.
+                        After many years at the Ash location, much growth, and several additions, land was 
+                        purchased at the corner of Fifth and Meridian. Groundbreaking ceremonies were held 
+                        April 4, 1958, for a new building at the current location.  Since then, additional land has been purchased and three major additions have been built. 
+                    We celebrated our 130-year anniversary in 2009.  We continue to grow in size, but more importantly, in our faith, witness, and ministry.</p>
+           </div> 
+    </section>
+    
+    <script>
+        // Get references to the menu items you want to add hover behavior to
+        const worshipNavItem = document.querySelector('nav ul li a[href="history.html"]');
+        const worshipNavItem1 = document.querySelector('nav ul li a[href="beleif.html"]');
+        const worshipNavItem2 = document.querySelector('nav ul li a[href="history2.html"]');
+    
+        // Function to navigate to a specific page
+        function navigateToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    
+        // Add hover event listeners to the menu items
+        worshipNavItem.addEventListener('mouseover', () => navigateToPage('history.html'));
+        worshipNavItem1.addEventListener('mouseover', () => navigateToPage('beleif.html'));
+        worshipNavItem2.addEventListener('mouseover', () => navigateToPage('history2.html'));
+    </script>
+
+
+<!-- <script>
+// JavaScript code to scroll horizontally to the "What We Believe" section when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const beleifContainer = document.querySelector('.beleif-container');
+    beleifContainer.scrollLeft = beleifContainer.scrollWidth;
+});
+</script> -->
+
+</body>
+
+</html>

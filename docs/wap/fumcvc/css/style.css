@@ -264,6 +264,16 @@ nav ul.nav-list li {
     background-color: white; /* Change bar color when toggle menu is expanded */
 }
 
+/* Landscape orientation styles for the header */
+@media screen and (orientation: landscape) {
+    header {
+        /* Your modified styles for landscape orientation */
+        /* For example, you can adjust the header's height, font size, or layout */
+        height: 80px;
+        font-size: 18px;
+        /* Add any other landscape-specific styles here */
+    }
+}
 
 .hero {
    position: relative;

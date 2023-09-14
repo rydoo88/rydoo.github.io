@@ -655,5 +655,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 </script>
+
+<script>
+    // Function to lock the orientation to portrait mode
+    function lockOrientation() {
+        if (screen.orientation) {
+            // Most modern browsers support screen.orientation
+            screen.orientation.lock("portrait");
+        } else if (screen.lockOrientation) {
+            // Some older browsers support screen.lockOrientation
+            screen.lockOrientation("portrait");
+        }
+    }
+
+    // Call the lockOrientation function when the page loads
+    window.addEventListener("load", lockOrientation);
+</script>
 </body>
 </html>

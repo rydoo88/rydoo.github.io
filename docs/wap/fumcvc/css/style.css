@@ -124,19 +124,19 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: right;
+    text-align: center;
 }
 
 .logo-text h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin: 0;
 }
 
 .logo-text p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     margin: 0;
     
@@ -254,10 +254,11 @@ height: 50px; /* Adjust the height as needed */
 
     /* Show the regular menu and hide the toggle menu when expanded */
     nav ul.show {
-        display: block;
+        display: flex;
+         flex-direction: column;
        background-color: gray; /* Set background color for the toggle menu */
       padding: 10px; /* Add space around the navigation items */
-      position: relative;
+      position: absolute;
       top: 60px; /* Adjust based on your header's height */
       right: 0;
      width: 150%;
@@ -283,69 +284,68 @@ nav ul.show li {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Adjust the height as needed */
+    height: 100vh; /* Adjust the height as needed */
     color:  #333333;
     text-align: center;
    z-index: 1;
 }
 
-/* Styles for the video */
-.hero video {
-    position: relative;
+/* Style the video element to cover the entire hero section */
+#background-video {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
-    opacity: 0.5; 
 }
 
-/* Styles for the content (text) */
-.hero .content {
-    position: absolute;
-    z-index: 1;
+/* Style the content within the hero section */
+.content {
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure content is above the video */
+    padding: 20px; /* Add padding for spacing */
 }
 
-
-.hero:hover {
-    color: white; /* Change text color to white on hover */
-}
-
-/* Center the text within the content div */
-.hero h1,
-.hero p {
-font-family:  'Open Sans', sans-serif;
+.content h1 {
+    font-size: 36px;
     margin: 0;
-
 }
 
-/* Adjust font weights */
-.hero h1 {
-    font-weight: 700; /* Bold */
-   font-size: 80px; /* Adjust the font size as desired */
-  
+.content p {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-.hero p {
-    font-weight: 400; /* Regular */
- font-size: 42px; /* Adjust the font size as desired */
-}
-
-/* Styles for the YouTube icon and link */
+/* Style the YouTube icon link */
 .youtube-link {
     display: inline-block;
-    margin-top: 20px; /* Add space between text and icon */
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
 }
 
 .youtube-link img {
-    width: 100px; /* Adjust the width of the icon as desired */
-    height: auto; /* Maintain the aspect ratio */
+    width: 50px;
+    height: auto;
 }
 
-.text-shadow-container {
-    text-align: center;
-    padding: 100px;
+/* Change link opacity on hover */
+.youtube-link:hover {
+    opacity: 0.8;
+}
+
+/* Make the hero section responsive */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 24px; /* Reduce font size for smaller screens */
+    }
+
+    .content p {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
 }
 
 
@@ -353,8 +353,8 @@ font-family:  'Open Sans', sans-serif;
 /* Styles for the about section and columns */
 .scriptures {
     display: flex; /* Use flexbox */
-    justify-content: center; /* Center the columns horizontally */
-    align-items: center; /* Center the columns vertically */
+    justify-content: space-between; /* Center the columns horizontally */
+    align-items: flex-start; /* Center the columns vertically */
     flex-wrap: wrap; /* Allow columns to wrap to new lines if needed */
     padding: 20px; /* Add some padding around the columns */
     text-align: center; /* Center-align the content within columns */
@@ -373,9 +373,9 @@ font-family:  'Open Sans', sans-serif;
     background-color: white; /* Add background color to the columns */
     margin: 10px; /* Add some margin between columns */
     box-sizing: border-box;
-   text-align: justify; /* Justify the text within the column */
+   text-align: center; /* Justify the text within the column */
  /* Add a right border to the first and second columns */
-    border-right: 50px solid #ccc;
+    border-right: 0px solid #ccc;
       
 }
 
@@ -407,16 +407,34 @@ font-family:  'Open Sans', sans-serif;
 }
 
 .scriptures-column img {
-    display: block;
-    max-width: 50px; /* Adjust the size as needed */
-    margin: 0 auto 10px; /* Center the image and add margin */
+    height: auto;
+    max-width: 100%; /* Adjust the size as needed */
+    margin-bottom: 0 auto 10px; /* Center the image and add margin */
 }
 
+/* Show a single column layout on smaller screens */
+@media (max-width: 768px) {
+    .scriptures {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Center-align the scripture columns */
+    .scriptures-column {
+        text-align: center;
+    }
+
+    /* Add space between columns in the single column layout */
+    .scriptures-column:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
 
 /* Styles for the services section and image slider */
 .events {
+  background-color: #f5f5f5;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
   margin-bottom: 5px;
 }
 
@@ -436,6 +454,8 @@ font-family:  'Open Sans', sans-serif;
   gap: 5px;
 
     transition: transform 5s ease-in-out;
+overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+    scroll-snap-type: x mandatory; /* Enable snapping for scrolling */
 }
 
 .images img {
@@ -475,14 +495,17 @@ font-family:  'Open Sans', sans-serif;
 
 /* Styles for the zoom-in effect */
 .image-container {
-    width: 500px; /* Adjust the width as needed */
-    height: 500px; /* Adjust the height as needed */
+    width: 350px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+ flex: 0 0 auto; /* Allow image containers to shrink and grow as needed */
+    scroll-snap-align: start; /* Ensure each image aligns to the start of the container */
+    margin-right: 10px; /* Add space between image containers */
 }
 
 .image-container img {
     display: block;
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
  flex: 0 0 100%;
 }
 
@@ -494,16 +517,30 @@ font-family:  'Open Sans', sans-serif;
     transform: scale(1.1);
 }
 
+/* Make the events section responsive */
+@media (max-width: 768px) {
+    .images {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+    }
+
+    .image-container {
+        margin-right: 0; /* Remove margin between image containers in the vertical layout */
+        margin-bottom: 10px; /* Add space between image containers */
+    }
+}
+
 .sermon {
     position: relative;
     text-align: center;
-    padding: 50px 0;
-    color: #333;
-display: flex; /* Add flex display for responsiveness */
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    display: flex; /* Add flex display for responsiveness */
     flex-direction: column; /* Stack content in a column on smaller screens */
 }
 
 .sermon-background {
+ flex: 1; /* Allow the background to take up remaining space */
     position: absolute;
     top: 0;
     left: 0;
@@ -515,6 +552,7 @@ display: flex; /* Add flex display for responsiveness */
     opacity: 0.5; /* Adjust the opacity value */
     z-index: -1;
     border-radius: 10px;
+    background-repeat: no-repeat;
 }
 
 .sermon-content {
@@ -523,21 +561,26 @@ display: flex; /* Add flex display for responsiveness */
     padding: 20px;
     width: 100%; /* Expand content to full width */
     box-sizing: border-box; /*
+flex: 1; /* Allow the content to take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
 }
 
 .sermon-details {
     flex: 1;
+ padding: 20px;
 }
 
 .sermon-details h2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .sermon-date {
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
+    color: #777;
+ margin: 5px 0;
 }
 
 .sermon-subject {
@@ -548,10 +591,10 @@ display: flex; /* Add flex display for responsiveness */
 }
 
 .sermon-description {
-       font-size: 18px;
+       font-size: 16px;
     color: gray;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin: 10px;
  text-align: justify;
 }
 
@@ -587,7 +630,7 @@ object-fit: cover;
 .watch-button {
  display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0073e6;;
     color: white;
     font-size: 16px;
     text-decoration: none;
@@ -597,11 +640,41 @@ object-fit: cover;
 
 
  .watch-button:hover {
-          background-color: #0056b3;
+          background-color:#0055a4;
     }
 
 
+/* Make the sermon section responsive */
+@media (max-width: 768px) {
+    .sermon {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
 
+    .sermon-background {
+        flex: 1; /* Allow the background to take up full width */
+        height: 200px; /* Adjust the background image height as needed */
+    }
+
+    .sermon-content {
+        flex: 1; /* Allow the content to take up full width */
+    }
+
+    .sermon-details {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .sermon-details h2 {
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+
+    .sermon-details .sermon-subject {
+        font-size: 24px; /* Reduce font size for smaller screens */
+    }
+
+    .sermon-details .sermon-description {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
 
 /* Style for centering the content vertically */
 .center-content10 {
@@ -616,16 +689,7 @@ object-fit: cover;
         height: 100%; /* Allow the height to adjust proportionally */
     }
 
-.ministries {
-    position: relative;
-    height: 700px; /* Adjust the height as needed */
-    color: white;
-     font-weight: bold; 
-    text-align: center;
-   margin-top: 5px;
-    padding:3px;
-  
-}
+
 
 .background-image {
     background-image: url("../images/church picture1.jpg"); /* Replace with your image URL */
@@ -637,6 +701,7 @@ object-fit: cover;
     justify-content: center;
      position: relative;
 
+
  
 }
 
@@ -647,48 +712,88 @@ object-fit: cover;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the opacity as needed */
  border-radius : 20px;
 }
 
-.content-ministries {
-  
+/* Initial styles for the ministries section */
+.ministries {
+    background-color: #f5f5f5; /* Add a background color or use your preferred color */
     padding: 20px;
-    border-radius: 10px;
-   z-index:1;
 }
 
-.h2 {
-    margin-bottom: 10px;
-      font-size: 40px;
+.content-ministries {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .ministry-details {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+   
+    padding: 20px;
+    border-radius: 10px; /* Add rounded corners to the container */
+    position: relative; /* Set to relative positioning to place text and map within it */
+    z-index: 1; /* Place the container above the background image */
+}
+h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+   color: #FF6347;
+  font-weight:bold;
 }
 
+/* Style the two columns for location and services */
 .column {
-    width: 45%; /* Adjust as needed */
-    text-align: left;
-  z-index:1000;
+    flex: 1;
+    margin-right: 20px;
 }
 
-h3 {
+.column:last-child {
+    margin-right: 0;
+}
+
+.column h3 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+     color: #FF6347;
 }
 
-p {
+.column p {
     font-size: 16px;
-    line-height: 1.4;
+    margin: 0 0 10px;
+ color: #FF6347;
 }
+
+/* Style the map within the container */
+.map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px; /* Add spacing between text and map */
+}
+
+/* Make the ministries section responsive */
+@media (max-width: 768px) {
+    .column {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .column:last-child {
+        margin-bottom: 0;
+    }
+
+    .ministry-details {
+        flex-direction: column;
+    }
+}
+
+
 
 
 
 .coming-events {
-    padding: 80px;
+    padding: 20px;
     text-align: center;
     color: white;
     background-image: url("../images/event.jpg");
@@ -701,19 +806,23 @@ p {
 
 .content {
     z-index: 1;
+   max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .coming-events h2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 0 0 20px;
     color: white;
 }
 
 .coming-events p {
-    font-size: 18px;
+    font-size: 16px;
     color: white;
-    margin-bottom: 30px;
+    margin: 0 0 20px;
     line-height: 1.5;
 }
 
@@ -721,6 +830,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
+    gap: 20px; /* Add spacing between images */
 }
 
 .row {
@@ -733,6 +844,7 @@ p {
     overflow: hidden;
     width: calc(25% - 20px); /* Adjust the width and gap for spacing */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex :1;
 }
 
 .image img {

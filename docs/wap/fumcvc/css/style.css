@@ -72,59 +72,63 @@ header {
 
 
 
-
 /* Styles for the header when scrolled */
 header.scrolled {
-    background-color:white;
-    padding: 5px; /* Adjust padding when scrolling */
-   color:#333333;
-    
+    background-color: white;
+    padding: 10px; /* Adjust padding when scrolling */
+    color: #333333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Add a new class for the scrolled navigation items */
-nav ul li  a.scrolled {
+nav ul li a.scrolled {
     color: #333333; /* Change to the desired color */
     /* Add any other styles you want for the scrolled items */
 }
 
-nav ul {
+/* Add styles for the navigation menu */
+nav ul.nav-list {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
+nav ul.nav-list li {
     margin-right: 20px;
 }
 
-nav ul li a {
+nav ul.nav-list li a {
     text-decoration: none;
     color: white;
-     font-weight: bold;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add smooth transition for color change */
 }
 
 /* Change the color of the navigation links to white */
-nav ul li a {
-    color: white;
+nav ul.nav-list li a:hover {
+    color: #333333; /* Change to the desired hover color */
 }
 
 /* Style for the logo */
 .logo {
-    margin-left: 20px;
- display: flex;
+    display: flex;
     align-items: center;
 }
 
 .logo img {
     width: 50px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
- margin-right: 10px;
+    margin-right: 10px;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: center;
 }
 
 .logo-text h1 {
@@ -139,7 +143,6 @@ nav ul li a {
     font-size: 12px;
     font-weight: 400;
     margin: 0;
-    
 }
 
 /* Keyframes for blinking animation */
@@ -157,11 +160,9 @@ nav ul li a {
     animation: blink 5s infinite;
 }
 
-
+/* Add styles for the dropdown menu */
 .dropdown {
     position: relative;
-height: 50px; /* Adjust the height as needed */
-
 }
 
 .dropdown-menu {
@@ -172,7 +173,8 @@ height: 50px; /* Adjust the height as needed */
     background-color: gray;
     padding: 10px;
     list-style: none;
-   max-width: 200px; /* Limit the width of the dropdown menu */
+    max-width: 200px; /* Limit the width of the dropdown menu */
+    z-index: 1; /* Ensure the dropdown appears above other content */
 }
 
 /* Add margin between dropdown items */
@@ -198,36 +200,6 @@ height: 50px; /* Adjust the height as needed */
     display: block;
 }
 
-.sub-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px; /* Adjust as needed */
-    background-color: gray;
-    padding: 10px;
-}
-
-
-
-
-
-/* Style for the donate button */
-.donate-button a {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: gray; /* Red color */
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-/* Change button color on hover */
-.donate-button a:hover {
-    background-color: black /* Darker red color */
-}
-
 /* Toggle menu styles */
 .toggle-menu {
     display: none; /* Initially hide the toggle menu */
@@ -241,41 +213,47 @@ height: 50px; /* Adjust the height as needed */
     margin: 6px 0;
 }
 
-/* Show the toggle menu and hide the regular menu at smaller screen sizes */
+/* Show the toggle menu at smaller screen sizes */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
+    .toggle-menu {
+        display: block; /* Show the toggle menu */
     }
 
-   .toggle-menu {
-        display: block;
-    }
-  
-
-    /* Show the regular menu and hide the toggle menu when expanded */
-    nav ul.show {
-        display: flex;
-         flex-direction: column;
-       background-color: gray; /* Set background color for the toggle menu */
-      padding: 10px; /* Add space around the navigation items */
-      position: absolute;
-      top: 60px; /* Adjust based on your header's height */
-      right: 0;
-     width: 150%;
-    z-index: 999; /* Ensure the menu appears above other content */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    nav ul.nav-list {
+        display: none; /* Hide the main navigation menu */
+        flex-direction: column; /* Stack the menu items vertically */
+        background-color: gray; /* Set background color for the toggle menu */
+        padding: 10px; /* Add space around the navigation items */
+        position: absolute;
+        top: 60px; /* Adjust based on your header's height */
+        right: 0;
+        width: 100%; /* Full width */
+        z-index: 999; /* Ensure the menu appears above other content */
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     }
 
     .toggle-menu.show .bar {
         background-color: white; /* Change bar color when toggle menu is expanded */
     }
+
+    /* Show the main navigation menu when the toggle menu is clicked */
+    .toggle-menu.show + nav ul.nav-list {
+        display: flex;
+    }
 }
 
-/* Adjust the styles for the navigation links in the toggle menu */
-nav ul.show li {
-    margin-bottom: 15px; /* Add space between navigation items */
+nav ul.nav-list.show {
+    display: flex;
+    flex-direction: column; /* To stack the menu items vertically */
+    background-color: gray; /* Set background color for the toggle menu */
+    padding: 10px; /* Add space around the navigation items */
+    position: absolute;
+    top: 60px; /* Adjust based on your header's height */
+    right: 0;
+    width: 100%; /* Full width */
+    z-index: 999; /* Ensure the menu appears above other content */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
-
 
 
 .hero {

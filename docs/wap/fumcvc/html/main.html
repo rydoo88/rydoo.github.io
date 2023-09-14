@@ -18,42 +18,32 @@
                 <p class="blink">Knowing God + Growing in Grace + Going in Love</p>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="history.html">HISTORY</a>
-                   
-                </li>
-                
-                <li><a href="history2.html">BELEIF</a></li>
-                <li><a href="member.html">MEMBERSHIP</a></li>
-                <li><a href="women.html">WOMEN IN FAITH</a></li>
-                <li><a href="staff.html">LEADERSHIP</a></li>
-                <li><a href="#">VALLEY CENTER PRESCHOOL</a></li>
-                <li class="dropdown">
-                    <a href="#">ABOUT US</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Service Times</a></li>
-                        <li><a href="#">What We Beleive</a></li>
-                        <li><a href="#">Become A Member</a></li>
-                        <li><a href="#">Church History</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">FUMCVC Email Group</a></li>
-                        <li><a href="#">FUMCVC NewsLetter The Broadcaster</a></li>
-                        <li><a href="#">Ways To Give</a></li>
-                        <li><a href="#">United Women In Faith</a></li>
-                        <li><a href="#">Employment</a></li>
-
-                    </ul>
-                </li>
-              
-                <li><a href="give.html">GIVE</a></li>
-            </ul>
-        </nav>
         <div class="toggle-menu">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        <nav class="nav-list">
+            
+            <ul class="nav-list">
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="belief.html">BELIEF</a></li>
+                <li><a href="membership.html">MEMBERSHIP</a></li>
+                <li><a href="women.html">WOMEN IN FAITH</a></li>
+                <li><a href="leadership.html">LEADERSHIP</a></li>
+                <li><a href="#">VALLEY CENTER PRESCHOOL</a></li>
+                <li class="dropdown">
+                    <a href="#">ABOUT US</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Service Times</a></li>
+                        <li><a href="#">What We Believe</a></li>
+                        <!-- Add more dropdown items here -->
+                    </ul>
+                </li>
+                <li><a href="give.html">GIVE</a></li>
+            </ul>
+        </nav>
+       
     </header>
     
     <section class="hero">
@@ -325,13 +315,13 @@
 
 <script>
     const toggleMenu = document.querySelector('.toggle-menu');
-    const navList = document.querySelector('nav ul');
+    const navList = document.querySelector('.nav-list');
 
     toggleMenu.addEventListener('click', () => {
         navList.classList.toggle('show');
-        toggleMenu.classList.toggle('active');
     });
 </script>
+
 
 <script>
     // Check if the user is on a mobile device
@@ -536,6 +526,17 @@ document.addEventListener('dragover', (e) => {
             });
             // Add markers, etc. as needed
         }
+
+
+          // Handle errors
+    window.addEventListener('unhandledrejection', function (event) {
+        if (event.reason && event.reason.message === "Google Maps JavaScript API error: Something went wrong.") {
+            // Display a custom error message to the user
+            var errorContainer = document.getElementById('map-error');
+            errorContainer.style.display = 'block';
+        }
+    });
+    
     }
 </script>
 

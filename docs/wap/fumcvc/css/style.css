@@ -220,16 +220,18 @@ nav ul.nav-list li a:hover {
     }
 
     nav ul.nav-list {
-        display: none; /* Hide the main navigation menu */
+       list-style: none;
+        display: flex; /* Hide the main navigation menu */
         flex-direction: column; /* Stack the menu items vertically */
         background-color: gray; /* Set background color for the toggle menu */
         padding: 10px; /* Add space around the navigation items */
         position: absolute;
         top: 60px; /* Adjust based on your header's height */
         right: 0;
-        width: 100%; /* Full width */
-        z-index: 999; /* Ensure the menu appears above other content */
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+       left: -100%; 
+       width: 150px; /* Adjust as needed */
+    z-index: 999; /* Ensure the menu appears above other content */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /
     }
 
     .toggle-menu.show .bar {
@@ -241,18 +243,20 @@ nav ul.nav-list li a:hover {
         display: flex;
     }
 }
-
+/* Show the menu when the 'show' class is applied */
 nav ul.nav-list.show {
-    display: flex;
-    flex-direction: column; /* To stack the menu items vertically */
-    background-color: gray; /* Set background color for the toggle menu */
-    padding: 10px; /* Add space around the navigation items */
-    position: absolute;
-    top: 60px; /* Adjust based on your header's height */
-    right: 0;
-    width: 100%; /* Full width */
-    z-index: 999; /* Ensure the menu appears above other content */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    left: 0; /* Display the menu on the left */
+}
+
+/* Add space and lines between menu items */
+nav ul.nav-list li {
+    margin-bottom: 10px; /* Add space between menu items */
+    border-bottom: 1px solid white; /* Add a line between menu items */
+    padding-bottom: 5px; /* Add space between the line and text */
+}
+
+.toggle-menu.show .bar {
+    background-color: white; /* Change bar color when toggle menu is expanded */
 }
 
 

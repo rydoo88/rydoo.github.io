@@ -266,12 +266,22 @@ nav ul.nav-list li {
 
 /* Landscape orientation styles for the header */
 @media screen and (orientation: landscape) {
-    header {
+  header {
         /* Your modified styles for landscape orientation */
         /* For example, you can adjust the header's height, font size, or layout */
         height: 80px;
-        font-size: 10px;
+        font-size: 18px;
         /* Add any other landscape-specific styles here */
+    }
+    
+    /* Ensure the toggle button remains visible in landscape */
+    .toggle-menu {
+        display: block;
+    }
+    
+    /* Adjust the position of the toggle menu as needed */
+    nav ul.nav-list {
+        /* Modify the positioning to accommodate the toggle button */
     }
 }
 

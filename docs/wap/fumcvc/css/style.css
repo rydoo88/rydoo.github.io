@@ -270,7 +270,7 @@ nav ul.nav-list li {
         /* Your modified styles for landscape orientation */
         /* For example, you can adjust the header's height, font size, or layout */
         height: 80px;
-        font-size: 18px;
+        font-size: 10px;
         /* Add any other landscape-specific styles here */
     }
 }

@@ -349,16 +349,16 @@ section {
 
 /* Style images */
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+     display: flex;
+    flex-wrap: wrap; /* Wrap images to the next line on smaller screens */
+    justify-content: center; /* Center images horizontally */
 }
 
 .image-container img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px;
+     max-width: 100%; /* Make sure images don't exceed their container's width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add some spacing between images */
+    max-height: 300px; /* Limit the maximum height of images, adjust as needed */
 }
 
 /* Media queries for responsiveness */
@@ -367,19 +367,24 @@ section {
         flex-direction: column;
     }
 }
-
-/* Style text content */
+/* Style the text-content */
 .text-content {
-    background-color: gray;
-    padding: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white; /* Set text color for text content */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Style the headings */
 .text-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: white;
+}
+
+/* Style the paragraphs */
+.text-content p {
+    margin: 10px 0;
+    line-height: 1.5;
 }
 
 /* Customize styles for specific sections if needed */

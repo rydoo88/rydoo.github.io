@@ -344,7 +344,7 @@ nav ul.show li {
             flex-direction: column;
             margin: 20px;
             border: 1px solid #ccc;
-            padding: 20px;
+            padding: 80px;
 }
 
 .event-details {

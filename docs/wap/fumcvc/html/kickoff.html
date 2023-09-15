@@ -18,13 +18,16 @@
                 <p class="blink">Knowing God + Growing in Grace + Going in Love</p>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="history.html">HISTORY</a>
-                   
-                </li>
-                
-                <li><a href="history2.html">BELEIF</a></li>
+        <div class="toggle-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="nav-list">
+            
+            <ul class="nav-list">
+                <li><a href="history.html">HISTORY</a></li>
+                <li><a href="history2.html">BELIEF</a></li>
                 <li><a href="member.html">MEMBERSHIP</a></li>
                 <li><a href="women.html">WOMEN IN FAITH</a></li>
                 <li><a href="staff.html">LEADERSHIP</a></li>
@@ -33,27 +36,14 @@
                     <a href="#">ABOUT US</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Service Times</a></li>
-                        <li><a href="#">What We Beleive</a></li>
-                        <li><a href="#">Become A Member</a></li>
-                        <li><a href="#">Church History</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">FUMCVC Email Group</a></li>
-                        <li><a href="#">FUMCVC NewsLetter The Broadcaster</a></li>
-                        <li><a href="#">Ways To Give</a></li>
-                        <li><a href="#">United Women In Faith</a></li>
-                        <li><a href="#">Employment</a></li>
-
+                        <li><a href="#">What We Believe</a></li>
+                        <!-- Add more dropdown items here -->
                     </ul>
                 </li>
-              
                 <li><a href="give.html">GIVE</a></li>
             </ul>
         </nav>
-        <div class="toggle-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+       
     </header>
     
     <section class="event">
@@ -189,13 +179,14 @@ window.addEventListener('scroll', checkInView);
 
 <script>
     const toggleMenu = document.querySelector('.toggle-menu');
-    const navList = document.querySelector('nav ul');
-
-    toggleMenu.addEventListener('click', () => {
-        navList.classList.toggle('show');
-        toggleMenu.classList.toggle('active');
-    });
-</script>
+ const navList = document.querySelector('nav.nav-list ul.nav-list'); // Select the <ul> element within the <nav>
+ 
+ toggleMenu.addEventListener('click', () => {
+     navList.classList.toggle('show');
+     toggleMenu.classList.toggle('active');
+ });
+ 
+ </script>
 
 </body>
 </html>

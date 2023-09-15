@@ -1,6 +1,67 @@
 
+/* Reset some default styles */
+
+* {
+    box-sizing: border-box;
+}
+/* Add fonts from Google Fonts */
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700&display=swap" rel="stylesheet">
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+   font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+     margin-top: 60px; /* Adjust the value to match the header's height */
+ max-width: 100%; /* Limit the maximum width to the viewport width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+h1, h2, h3 {
+    font-family: 'Crimson Text', serif;
+     margin-bottom: 15px;
+}
+
+/* Adjust font sizes and line heights */
+h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
 
 
+.darken-video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value for darkness */
+}
 header {
     background-color:gray; /* Red color */
     color: white;
@@ -17,75 +78,193 @@ header {
 
 
 
-
 /* Styles for the header when scrolled */
 header.scrolled {
-    background-color:white;
-    padding: 5px; /* Adjust padding when scrolling */
-   color:#333333;
-    
+    background-color: white;
+    padding: 10px; /* Adjust padding when scrolling */
+    color: #333333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Add a new class for the scrolled navigation items */
-nav ul li  a.scrolled {
+nav ul li a.scrolled {
     color: #333333; /* Change to the desired color */
     /* Add any other styles you want for the scrolled items */
 }
 
-nav ul {
+/* Add styles for the navigation menu */
+nav ul.nav-list {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
+nav ul.nav-list li {
     margin-right: 20px;
 }
 
-nav ul li a {
+nav ul.nav-list li a {
     text-decoration: none;
     color: white;
-     font-weight: bold;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add smooth transition for color change */
 }
 
 /* Change the color of the navigation links to white */
-nav ul li a {
-    color: white;
+nav ul.nav-list li a:hover {
+    color: #333333; /* Change to the desired hover color */
 }
 
 /* Style for the logo */
 .logo {
-    margin-left: 20px;
- display: flex;
+    display: flex;
     align-items: center;
 }
 
 .logo img {
     width: 50px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
- margin-right: 10px;
+    margin-right: 10px;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: right;
 }
 
 .logo-text h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin: 0;
 }
 
 .logo-text p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     margin: 0;
-    
 }
+
+/* Keyframes for blinking animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Styles for the blinking paragraph */
+.blink {
+    animation: blink 5s infinite;
+}
+
+/* Add styles for the dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: gray;
+    padding: 10px;
+    list-style: none;
+    max-width: 200px; /* Limit the width of the dropdown menu */
+    z-index: 1; /* Ensure the dropdown appears above other content */
+}
+
+/* Add margin between dropdown items */
+.dropdown-menu li {
+    margin-bottom: 8px;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure text fits the line */
+.dropdown-menu a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Toggle menu styles */
+.toggle-menu {
+    display: none; /* Initially hide the toggle menu */
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+/* Show the toggle menu at smaller screen sizes */
+@media (max-width: 768px) {
+    .toggle-menu {
+        display: block; /* Show the toggle menu */
+    }
+
+    nav ul.nav-list {
+       list-style: none;
+        display: flex; /* Hide the main navigation menu */
+        flex-direction: column; /* Stack the menu items vertically */
+        background-color: gray; /* Set background color for the toggle menu */
+        padding: 10px; /* Add space around the navigation items */
+        position: absolute;
+        top: 60px; /* Adjust based on your header's height */
+        right: 0;
+       left: -100%; 
+       width: 150px; /* Adjust as needed */
+    z-index: 999; /* Ensure the menu appears above other content */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /
+    }
+
+    .toggle-menu.show .bar {
+        background-color: white; /* Change bar color when toggle menu is expanded */
+    }
+
+    /* Show the main navigation menu when the toggle menu is clicked */
+    .toggle-menu.show + nav ul.nav-list {
+        display: flex;
+    }
+}
+/* Show the menu when the 'show' class is applied */
+nav ul.nav-list.show {
+    left: 0; /* Display the menu on the left */
+}
+
+/* Add space and lines between menu items */
+nav ul.nav-list li {
+    margin-bottom: 10px; /* Add space between menu items */
+    border-bottom: 1px solid white; /* Add a line between menu items */
+    padding-bottom: 5px; /* Add space between the line and text */
+}
+
+.toggle-menu.show .bar {
+    background-color: white; /* Change bar color when toggle menu is expanded */
+}
+
 
 /* Keyframes for blinking animation */
 @keyframes blink {
@@ -153,150 +332,88 @@ height: 50px; /* Adjust the height as needed */
     padding: 10px;
 }
 
-
-
-
-
-/* Style for the donate button */
-.donate-button a {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: gray; /* Red color */
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-/* Change button color on hover */
-.donate-button a:hover {
-    background-color: black /* Darker red color */
-}
-
-/* Toggle menu styles */
-.toggle-menu {
-    display: none; /* Initially hide the toggle menu */
-    cursor: pointer;
-}
-
-.bar {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
-}
-
-/* Show the toggle menu and hide the regular menu at smaller screen sizes */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-
-   .toggle-menu {
-        display: block;
-    }
-  
-
-    /* Show the regular menu and hide the toggle menu when expanded */
-    nav ul.show {
-        display: block;
-       background-color: gray; /* Set background color for the toggle menu */
-      padding: 10px; /* Add space around the navigation items */
-      position: relative;
-      top: 60px; /* Adjust based on your header's height */
-      right: 0;
-     width: 150%;
-    z-index: 999; /* Ensure the menu appears above other content */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    }
-
-
-    .toggle-menu.show .bar {
-        background-color: white; /* Change bar color when toggle menu is expanded */
-    }
-}
-
 /* Adjust the styles for the navigation links in the toggle menu */
 nav ul.show li {
     margin-bottom: 15px; /* Add space between navigation items */
 }
 
-
 /* Style the sections */
 section {
     padding-top: 50px;
     text-align: center;
-    margin-bottom: 1px;
-   color:white;
- font-size: 20px;
+    margin-bottom: 1px; /* You can adjust the margin as needed */
+    color: white;
+    font-size: 20px;
     line-height: 1.5;
 }
 
+/* Style images */
 .image-container {
-    display: flex; /* Use flexbox to arrange images horizontally */
-    justify-content: space-between; /* Space images evenly */
-    align-items: center; /* Center-align images vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .image-container img {
-    max-width: 30%; /* Adjust the width of individual images */
+    max-width: 100%;
     height: auto;
+    margin: 10px;
 }
 
-/* Style images */
-img {
-    
-    display: block; /* Remove extra spacing below images */
-    margin: 0 auto; /* Center-align images */
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
 }
 
 /* Style text content */
 .text-content {
-    background-color: gray; /* Set a background color for the text section */
+    background-color: gray;
     padding: 10px;
-    border: 1px solid #ddd; /* Add a border around the text section */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white; /* Set text color for text content */
 }
 
-/* Style headings */
 .text-content h2 {
     font-size: 24px;
     margin-bottom: 10px;
-   color: white;
 }
-
-
 
 /* Customize styles for specific sections if needed */
 #section1 {
-    background-color: #f7f7f7; /* Customize the background color for Section 1 */
+    background-color: #f7f7f7;
 }
 
 #section2 {
-    background-color: #f7f7f7; /* Customize the background color for Section 1 */
-   z-index:-1;
+    background-color: #f7f7f7;
+    z-index: -1; /* You might want to avoid using negative z-index values */
 }
+
+/* Add animation to .slide-left */
 .slide-left {
     animation: slideFromLeft 0.5s ease-in-out;
-    animation-delay: 0.5s; /* Delay the animation for 0.5 seconds after page load */
+    animation-delay: 0.5s;
 }
 
 @keyframes slideFromLeft {
     0% {
-        transform: translateX(-100%); /* Start the animation from the left */
+        transform: translateX(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0); /* End the animation at its original position */
+        transform: translateX(0);
         opacity: 1;
     }
 }
 
 #section3 {
-    background-color: #e8e8e8; /* Customize the background color for Section 3 */
-  z-index:1;
+    background-color: #e8e8e8;
+    z-index: 1;
 }
+
 
 .footer {
     background: linear-gradient(to bottom, #000000, #FFFFFF);

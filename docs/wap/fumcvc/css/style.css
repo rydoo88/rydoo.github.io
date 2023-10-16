@@ -78,9 +78,9 @@ header {
 
 /* Styles for the header when scrolled */
 header.scrolled {
-    background-color: white;
+    background-color:#3333;
     padding: 10px; /* Adjust padding when scrolling */
-    color: #333333;
+    color: #33333;
     position: fixed;
     width: 100%;
     top: 0;
@@ -103,6 +103,7 @@ nav ul.nav-list {
 
 nav ul.nav-list li {
     margin-right: 20px;
+      white-space: nowrap;
 }
 
 nav ul.nav-list li a {

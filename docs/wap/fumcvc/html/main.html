@@ -29,17 +29,12 @@
                 <li><a href="history.html">HISTORY</a></li>
                 <li><a href="history2.html">BELIEF</a></li>
                 <li><a href="member.html">MEMBERSHIP</a></li>
-                <li><a href="women.html">WOMEN IN FAITH</a></li>
+                <li><a href="#ministries">SERVICE TIMES</a></li>
+                <li><a href="#children">CHILDREN</a></li>
+                <li><a href="#youth">YOUTH</a></li>
                 <li><a href="staff.html">LEADERSHIP</a></li>
-                <li><a href="#">VALLEY CENTER PRESCHOOL</a></li>
-                <li class="dropdown">
-                    <a href="#">ABOUT US</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Service Times</a></li>
-                        <li><a href="#">What We Believe</a></li>
-                        <!-- Add more dropdown items here -->
-                    </ul>
-                </li>
+                <li><a href="#preschool">VALLEY CENTER PRESCHOOL</a></li>
+                
                 <li><a href="give.html">GIVE</a></li>
             </ul>
         </nav>
@@ -89,7 +84,7 @@
         <div class="image-slider">
           <div class="images">
             <a href="page1.html" class="image-container">
-              <img src="../images/sand_20811ac.jpg" alt="Image 1" draggable="true">
+              <img src="../images/sand_20811ac.jpg" alt="Image 1" draggable="true" id="preschool">
             </a>
       
             <a href="../html/history.html" class="image-container">
@@ -97,16 +92,14 @@
             </a>
       
             <a href="page3.html" class="image-container">
-              <img src="../images/IMG_0293.jpeg" alt="Image 3" draggable="true">
+              <img src="../images/children.jpeg" alt="Image 3" draggable="true" id="children">
             </a>
       
             <a href="page4.html" class="image-container">
-              <img src="../images/IMG_0293.jpeg" alt="Image 4" draggable="true">
+              <img src="../images/youth.jpg" alt="Image 4" draggable="true" id="youth">
             </a>
       
-            <a href="page5.html" class="image-container">
-              <img src="../images/IMG_0293.jpeg" alt="Image 5" draggable="true">
-            </a>
+            
           </div>
         </div>
       </section>
@@ -136,7 +129,7 @@
         </div>
     </section>
     
-    <section class="ministries">
+    <section class="ministries" id="ministries">
        
         <div class="background-image">
             <div class="content-ministries">
@@ -256,10 +249,10 @@
             </div>
             
             <div class="social-media">
-                <a href="#"><i class="fab fa-twitter"> </i> </a>
+       
                 <a href="https://www.facebook.com/fumcvc" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.youtube.com/@firstunitedmethodistchurch7457" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+               
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
@@ -607,7 +600,7 @@ document.addEventListener('dragover', (e) => {
     const worshipNavItem2 = document.querySelector('nav ul li a[href="history2.html"]');
     const worshipNavItem3 = document.querySelector('nav ul li a[href="give.html"]');
     const worshipNavItem4 = document.querySelector('nav ul li a[href="member.html"]');
-    const worshipNavItem5 = document.querySelector('nav ul li a[href="women.html"]');
+   // const worshipNavItem5 = document.querySelector('nav ul li a[href="women.html"]');
     const worshipNavItem6 = document.querySelector('nav ul li a[href="staff.html"]');
 
     // Function to navigate to a specific page
@@ -621,7 +614,7 @@ document.addEventListener('dragover', (e) => {
     worshipNavItem2.addEventListener('mouseover', () => navigateToPage('history2.html'));
     worshipNavItem3.addEventListener('mouseover', () => navigateToPage('give.html'));
     worshipNavItem4.addEventListener('mouseover', () => navigateToPage('member.html'));
-    worshipNavItem5.addEventListener('mouseover', () => navigateToPage('women.html'));
+   // worshipNavItem5.addEventListener('mouseover', () => navigateToPage('women.html'));
     worshipNavItem6.addEventListener('mouseover', () => navigateToPage('staff.html'));
 </script>
 

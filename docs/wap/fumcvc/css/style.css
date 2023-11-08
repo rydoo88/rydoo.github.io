@@ -4,6 +4,11 @@
 }
 /* Add fonts from Google Fonts */
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700&display=swap" rel="stylesheet">
+
+html {
+    scroll-behavior: smooth;
+}
+
 body, h1, h2, p {
     margin: 0;
     padding: 0;

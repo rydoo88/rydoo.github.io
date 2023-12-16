@@ -343,7 +343,7 @@ nav ul.show li {
             background-size: cover;
             background-position: center;
             color: #686868; /* Text color on top of the image */
-            text-align: center; /* Center-align content */
+            text-align: justify; /* Center-align content */
             padding: 100px 0; /* Adjust the padding as needed */
             display: flex;
             flex-wrap: wrap;

@@ -113,7 +113,7 @@
         <div class="sermon-content">
             <div class="sermon-details">
                 <h2>Latest Sermon</h2>
-                <p class="sermon-date">December 17, 2023</p>
+                <p id="currentDate" style="text-align: center; font-weight: bold; margin-top: 20px;" class="sermon-date"></p>
                 <h3 class="sermon-subject">ADVENT</h3>
                 <p class="sermon-description">Advent is a season of waiting. The word Advent comes from the Latin word meaning “coming.”  
                     During Advent we are celebrating the coming of Christ the King in the past and we are anticipating the second coming of Christ. 
@@ -662,6 +662,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Call the lockOrientation function when the page loads
     window.addEventListener("load", lockOrientation);
+
+    
 </script>
+
+<script>
+    // Function to update the date
+    function updateDate() {
+      // Get the current date
+      var currentDate = new Date();
+
+      // Months array
+      var months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      // Get the month, day, and year
+      var month = months[currentDate.getMonth()];
+      var day = currentDate.getDate();
+      var year = currentDate.getFullYear();
+
+      // Display the formatted date in the element with id "currentDate"
+      document.getElementById("currentDate").innerText = month + " " + day + ", " + year;
+    }
+
+    // Call the updateDate function when the page loads
+    window.onload = function() {
+      updateDate();
+
+      // Update the date every midnight
+      setInterval(updateDate, 1000 * 60 * 60 * 24);
+    };
+  </script>
 </body>
 </html>

@@ -83,7 +83,7 @@
     <section class="events">
         <div class="image-slider">
           <div class="images">
-            <a href="../html/preschool.html" class="image-container">
+            <a href="../html/preschool.html" class="image-container" >
               <img src="../images/sand_20811ac.jpg" alt="Image 1" draggable="true" id="preschool">
             </a>
       
@@ -95,8 +95,12 @@
               <img src="../images/children.jpeg" alt="Image 3" draggable="true" id="children">
             </a>
       
-            <a href="page4.html" class="image-container">
+            <a href="#youth" class="image-container link-without-underline" >
               <img src="../images/youth.jpg" alt="Image 4" draggable="true" id="youth">
+              <div id="additional-section" class="additional-section">
+                <p class="additional-text">UMYF for Middle Schoolers and High Schoolers at 6:00 p.m. on Wednesday evenings in the Fellowship Hall.</p>
+               
+              </div>
             </a>
       
             
@@ -696,5 +700,32 @@ document.addEventListener('DOMContentLoaded', function () {
       setInterval(updateDate, 1000 * 60 * 60 * 24);
     };
   </script>
+
+
+
+<!-- 
+<script>
+    // Remove unused or commented-out variables (leftArrow, rightArrow)
+    // ...
+
+    // Correct the IDs for unique values
+    const additionalSection = document.getElementById('additional-section');
+
+    // Function to show the additional section
+    function showAdditionalSection() {
+        additionalSection.style.display = 'block';
+    }
+
+    // Function to hide the additional section
+    function hideAdditionalSection() {
+        additionalSection.style.display = 'none';
+    }
+
+    // Add an event listener to show the section on mouseover
+    document.getElementById('youthContainer').addEventListener('mouseover', showAdditionalSection);
+    // Optionally, you may add an event listener to hide the section on mouseout
+    // document.getElementById('youthContainer').addEventListener('mouseout', hideAdditionalSection);
+</script> -->
+
 </body>
 </html>

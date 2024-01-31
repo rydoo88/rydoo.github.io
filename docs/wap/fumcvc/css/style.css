@@ -629,6 +629,15 @@ flex: 1; /* Allow the content to take up remaining space */
  text-align: justify;
 }
 
+.sermon-message {
+       font-size: 16px;
+    color: gray;
+    line-height: 1.5;
+    margin: 10px;
+ text-align: center;
+}
+
+
 .sermon-image {
    text-align: right;
     max-width: 20%; /* Ensure the image fits within its container */
